@@ -166,12 +166,8 @@ spec:
         resources:
           requests:
             storage: {{ .size | quote }}
-            {{- if .storageClass -}}
-            {{- if (eq "-" .storageClass) -}}
-            {{- printf "storageClassName: \"\"" -}}
-            {{- else }}
-            {{- printf "storageClassName: %s" .storageClass -}}
-            {{- end }}
+            {{- if .storageClass }}
+            storageClassName: {{ .storageClass }}
             {{- end }}
   {{- end }}
 {{- end }}
