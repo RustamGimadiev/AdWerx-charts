@@ -166,8 +166,8 @@ spec:
         resources:
           requests:
             storage: {{ .size | quote }}
-            {{- if .storageClass }}
-            storageClassName: {{ .storageClass }}
-            {{- end }}
+        {{- if .storageClass }}
+        storageClassName: {{ .storageClass }}
+        {{- end }}
   {{- end }}
 {{- end }}
